@@ -94,3 +94,36 @@ export function generateGroupsProblem(difficulty = 'easy') {
     difficulty,
   };
 }
+
+/**
+ * Generate a multiplication problem
+ * @param {string} difficulty - 'easy', 'medium', or 'hard'
+ * @returns {object} Multiplication problem
+ */
+export function generateMultiplicationProblem(difficulty = 'easy') {
+  let a, b;
+
+  if (difficulty === 'easy') {
+    // 1-5 × 1-5 (focus on 2s, 5s, 10s)
+    const easyNumbers = [1, 2, 2, 5, 5, 10];
+    a = easyNumbers[Math.floor(Math.random() * easyNumbers.length)];
+    b = Math.floor(Math.random() * 5) + 1;
+  } else if (difficulty === 'medium') {
+    // 2-6 × 2-6
+    a = Math.floor(Math.random() * 5) + 2;
+    b = Math.floor(Math.random() * 5) + 2;
+  } else {
+    // 2-12 × 2-12 (full times tables)
+    a = Math.floor(Math.random() * 11) + 2;
+    b = Math.floor(Math.random() * 11) + 2;
+  }
+
+  return {
+    type: 'multiplication',
+    a,
+    b,
+    answer: a * b,
+    symbol: '×',
+    difficulty,
+  };
+}
