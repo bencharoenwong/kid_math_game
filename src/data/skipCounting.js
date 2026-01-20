@@ -1,23 +1,23 @@
 /**
  * Skip counting configuration with difficulty progression
- * Easy: 2, 5, 10 (most common, easiest to visualize)
- * Medium: 3, 4, 6 (still manageable)
- * Hard: 7, 8, 9, 11, 12 (multiplication table prep)
+ * Easy: 2 only (start simple)
+ * Medium: 2, 5, 10 (common skip counts)
+ * Hard: 3, 4, 6, 7, 8, 9, 11, 12 (full multiplication prep)
  */
 
 const SKIP_COUNT_CONFIG = {
   easy: {
+    options: [2],
+    maxValue: 30,
+    sequenceLength: 6,
+  },
+  medium: {
     options: [2, 5, 10],
     maxValue: 50,
     sequenceLength: 6,
   },
-  medium: {
-    options: [3, 4, 6],
-    maxValue: 60,
-    sequenceLength: 6,
-  },
   hard: {
-    options: [7, 8, 9, 11, 12],
+    options: [3, 4, 6, 7, 8, 9, 11, 12],
     maxValue: 72,
     sequenceLength: 6,
   },
