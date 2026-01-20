@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent pull-to-refresh on mobile */
+html, body {
+  overscroll-behavior: none;
+}
+
+/* Prevent text selection during gameplay */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Smooth touch interactions */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
